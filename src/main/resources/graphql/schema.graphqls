@@ -1,0 +1,28 @@
+type Query{
+    getBookByName(name: String) : [Book]
+}
+
+type Mutation{
+    createOrder(orderRequest: OrderRequest) : Order
+}
+
+type Book{
+    id: String
+    name: String
+    author: String
+    price: Int
+}
+
+input OrderRequest{
+    books: [String!]
+    userId: String
+    userName: String
+}
+
+type Order{
+    id : String
+    userId : String
+    books : [String]
+    orderCreatedTs : String
+    totalAmount : Int
+}
